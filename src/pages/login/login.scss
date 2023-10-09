@@ -1,0 +1,73 @@
+.login{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:aliceblue;
+    .card{
+        display: flex;
+        width: 50%;
+        min-height: 500px;
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        .left{
+            flex: 1;
+            background: url("../../assets/log.jpg")
+            center;
+            background-size: cover;
+            padding:50px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            h1{
+                font-weight: 200px;
+                line-height: 100px;
+            }
+            // p{}
+            span{
+                font-size: 14px;
+            }
+            button{
+                width: 50%;
+                padding: 10px;
+                border: none;
+                background-color: white;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+        }
+        .right{
+            flex: 1;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 50px;
+            h1{
+                color: #555;
+            }
+            form{
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                input{
+                    border: none;
+                    border-bottom: 1px solid gray;
+                    padding: 10px 20px;
+
+                }
+                button{
+                    width: 50%;
+                    padding: 10px;
+                    border: none;
+                    color: white;
+                    font-weight: bold;
+                    cursor: pointer;
+                    background-color: rgb(115, 41, 115);
+                }
+            }
+        }
+    }
+}

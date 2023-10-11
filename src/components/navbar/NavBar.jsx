@@ -18,7 +18,7 @@ const NavBar = () => {
     <HomeIcon/>
     <DarkModeIcon/>
     <AppsIcon/>
-    <div className="search"> <SearchIcon/><input type="search" placeholder='Search...'/></div>
+    <div className="search"> <SearchIcon htmlFor="id"/><input type="search" placeholder='Search...' id="id"/></div>
    </div> 
     <div className="right">
     <PersonIcon/>

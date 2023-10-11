@@ -4,11 +4,11 @@ import './App.scss'
 import Register from './register/Register'
 import Home from './pages/home/Home'
 import Profile from './pages/profile/Profile'
+import './style.scss'
 
 import {
   createBrowserRouter,
   Outlet,
-  Router,
   RouterProvider,
   Navigate
 } from "react-router-dom";
@@ -20,11 +20,13 @@ const App = () => {
   const currentUser=false;
   const Layout=()=>{
     return(
-      <div> 
+      <div className="theme-light">
        <NavBar/>
        <div style={{display:"flex"}}>
        <LeftBar/>
+       <div style={{flex:"6"}}>
        <Outlet/>
+       </div>
        <RightBar/>
 
        </div>

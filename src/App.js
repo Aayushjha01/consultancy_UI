@@ -20,17 +20,16 @@ const App = () => {
   const currentUser=false;
   const Layout=()=>{
     return(
-      <div className="theme-light">
+<div className="theme-dark">
        <NavBar/>
-       <div style={{display:"flex"}}>
+     <div style={{display:"flex"}}>
        <LeftBar/>
-       <div style={{flex:"6"}}>
-       <Outlet/>
-       </div>
-       <RightBar/>
-
-       </div>
-      </div>
+      <div style={{flex:"6"}}>
+      <Outlet/>
+  </div>
+      <RightBar/>
+</div>
+</div>
     )
 
    

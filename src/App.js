@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Login from './pages/login/Login'
 import './App.scss'
 import Register from './register/Register'
@@ -15,12 +15,15 @@ import {
 import NavBar from './components/navbar/NavBar';
 import LeftBar from './components/leftbar/LeftBar';
 import RightBar from './components/rightbar/RightBar';
+import { Context } from './components/context/DarkModeContext'
+import { AuthContextP } from './components/context/AuthContext'
 
 const App = () => {
-  const currentUser=false;
+  const {mode} = useContext(Context)
+  const {CurrentUser} = useContext(AuthContextP)
   const Layout=()=>{
     return(
-<div className="theme-dark">
+<div className={`theme-${mode ? "dark":"light"}`}>
        <NavBar/>
      <div style={{display:"flex"}}>
        <LeftBar/>
@@ -36,14 +39,15 @@ const App = () => {
    
   }
   const ProtectedRoute=({children})=>{
-    if(currentUser){
-      console.log(!currentUser,'usder')
+    if(!CurrentUser){
+     
       // if true then this condition
     
+     
       return <Navigate to="/login"/>
       //yaha circular json problem existed due to= <Login/> 
     }
-    return children;
+    return children
   }
   const router = createBrowserRouter([
     {

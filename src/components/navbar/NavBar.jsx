@@ -6,17 +6,19 @@ import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
 import EmailIcon from '@mui/icons-material/Email';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-// import WbSunnyIcon from '@mui/icons-material/WbSunny';
-import img1 from '../../assets/log.jpg'
+import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { Context } from '../context/DarkModeContext';
 
 const NavBar = () => {
+  const {mode ,toggle} = useContext(Context)
   return (
     <div className="navbar">
     <div className="left">
     <Link to="/" style={{textDecoration:"None"}}> <span >Your Consultant</span></Link>
     <HomeIcon/>
-    <DarkModeIcon/>
+    {mode ?<DarkModeIcon onClick={toggle}/>: <WbSunnyIcon onClick={toggle}/>}
     <AppsIcon/>
     <div className="search"> <SearchIcon htmlFor="id"/><input type="search" placeholder='Search...' id="id"/></div>
    </div> 
